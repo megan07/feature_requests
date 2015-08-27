@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block page_title %}
+    Feature Requests App
+{% endblock %}
+{% block page_header %}
+    Welcome to the Feature Request App!
+{% endblock %}
+{% block page_sub_header %}
+    What would you like to do?
+{% endblock %}
+{% block page_content %}
+        <ul class="home-list">
+            <li><a href="/add_client">Add a Client</a></li>
+            <li><a href="/submit_request">Submit a Feature Request</a></li>
+            <li><a href="/view_requests">View Submitted Requests</a></li>
+        </ul>
+{% endblock %}

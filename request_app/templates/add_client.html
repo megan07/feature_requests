@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block page_title %}
+    Submit a Feature Request
+{% endblock %}
+{% block page_header %}
+    Submit a Feature Request
+{% endblock %}
+{% block page_sub_header %}
+    Please fill out the form below!
+{% endblock %}
+{% block page_content %}
+
+{% load crispy_forms_tags %}
+    <a class="home-link" href="/">Home</a>
+    <form method="POST" class="form">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button>Submit</button>
+    </form>
+{% endblock %}

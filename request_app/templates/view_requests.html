@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block page_title %}
+    View Feature Requests
+{% endblock %}
+{% block page_header %}
+    View the submitted feature requests below.
+{% endblock %}
+
+{% block page_content %}
+    <a class="home-link" href="/">Home</a>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Client</th>
+            <th></th>
+        </tr>
+
+        {% for request in requests %}
+            <tr>
+                <td>{{ request.title }}</td>
+                <td>{{ request.description|truncatechars:50 }}</td>
+                <td>{{ request.client }}</td>
+                <td><a href="/submit_request/{{ request.id }} ">Edit/See More</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
